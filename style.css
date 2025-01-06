@@ -1,0 +1,35 @@
+/* style.css */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body{
+    font-family: 'Roboto',Helvetica, "Times New Roman", sans-serif;
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+}
+
+.container {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    border: 5px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.container > div {
+    width: 25%; /* Cada div contenedor de botón ocupará el 25% del ancho del contenedor */
+    display: flex;
+    justify-content: center; /* Centra el botón dentro del div */
+}
+
+.container button {
+    width: 100%; /* El botón ocupa todo el ancho del div contenedor */
+    height: 3rem;
+    padding: 0;
+    background-color: lightblue;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
