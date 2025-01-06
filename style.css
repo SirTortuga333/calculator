@@ -6,30 +6,67 @@ body{
     display: flex;
     padding: 0px;
     margin: 0px;
+    background-color: darkslategray;
 }
 
 .container {
     margin: 20px;
     display: flex;
-    flex-wrap: wrap;
-    width: 500px;
+    flex-direction: column;
+    width: 600px;
+    height: 600px;
     border: 5px solid black;
     border-radius: 10px;
     box-sizing: border-box;
+    background-color: rgb(228, 228, 228);
 }
 
-.container > div {
-    width: 25%; /* Cada div contenedor de botón ocupará el 25% del ancho del contenedor */
+.result{
+    padding: 10%;
+    font-size: 32px;
+    box-sizing: border-box;
+}
+
+.buttons{
     display: flex;
-    justify-content: center; /* Centra el botón dentro del div */
+    flex-direction: row;
+    flex-grow: 1;
 }
 
 .container button {
-    width: 100%; /* El botón ocupa todo el ancho del div contenedor */
     height: 3rem;
     padding: 0;
     background-color: lightblue;
     border: 1px solid white;
     border-radius: 5px;
     box-sizing: border-box;
+    flex-grow: 1;
 }
+
+.container > .buttons > .numbers {
+    width: 75%; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.container > .buttons > .operators {
+    width: 25%; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.numbers > button{
+    width: 30%;
+    flex-grow: 1;
+}.operators > button{
+    width: 100%;
+    flex-grow: 1;
+}
+
+button:hover{
+    background-color: rgb(93, 125, 136);
+    border: 1px solid lightgray;
+}
+button:
