@@ -43,11 +43,18 @@ function evalString(string){
     const operation = [...string];
 
     operatorIndex = operation.findIndex(item => operators.includes(item))
+
+    // Check for multiple operators or none
+    if(operation.filter(item => operators.includes(item)).length !== 1){
+        console.log('hola')
+        return 'ERROR'
+    }
+
     num1 = operation.slice(0, operatorIndex).join('')
     num2 = operation.slice(operatorIndex+1).join('')
     operator = operation.slice(operatorIndex, operatorIndex+1).toString()
 
-    console.log(operator)
+    
 
     return operate(operator, parseInt(num1), parseInt(num2));
 }
@@ -73,9 +80,16 @@ buttons.forEach(element => {
                 result.textContent = evalString(result.textContent);
             }
         })
-    }else{
+    }else if(element.classList.contains('clear')){
         element.addEventListener('click', (Element) => {
-            
+            result.textContent = ''
+        })
+
+    }else {
+        element.addEventListener('click', (Element) => {
+            if(result.textContent === 'ERROR'){
+                result.textContent = '';
+            }
             if(result.textContent === '' && Element.target.classList.contains('operator')){
                 result.textContent = '0' + Element.target.textContent
             }else{
