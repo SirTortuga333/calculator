@@ -9,7 +9,10 @@ function multiply(a,b){
     return a*b;
 }
 function divide(a,b){
-    return a/b;
+    
+    if(b === 0 ) return 'Nope'
+
+    return (a/b).toFixed(3);
 }
 
 function operate(operator, a, b){
@@ -46,7 +49,6 @@ function evalString(string){
 
     // Check for multiple operators or none
     if(operation.filter(item => operators.includes(item)).length !== 1){
-        console.log('hola')
         return 'ERROR'
     }
 
@@ -82,18 +84,21 @@ buttons.forEach(element => {
         })
     }else if(element.classList.contains('clear')){
         element.addEventListener('click', (Element) => {
-            result.textContent = ''
+            result.textContent = '0'
         })
 
     }else {
         element.addEventListener('click', (Element) => {
-            if(result.textContent === 'ERROR'){
-                result.textContent = '';
+            if(result.textContent === 'ERROR' || result.textContent === 'Nope'){
+                result.textContent = '0';
             }
             if(result.textContent === '' && Element.target.classList.contains('operator')){
                 result.textContent = '0' + Element.target.textContent
             }else{
-                result.textContent += Element.target.textContent
+                if(result.textContent === '0')
+                    result.textContent = Element.target.textContent
+                else
+                    result.textContent += Element.target.textContent
             }
             return
         })

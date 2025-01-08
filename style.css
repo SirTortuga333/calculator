@@ -14,7 +14,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 600px;
-    height: 600px;
+    height: 500px;
     border: 5px solid black;
     border-radius: 10px;
     box-sizing: border-box;
@@ -25,12 +25,19 @@ body{
     padding: 10%;
     font-size: 32px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border: 2px solid black;
+
 }
 
 .buttons{
     display: flex;
     flex-direction: row;
     flex-grow: 1;
+    border: 3px solid black;
+
 }
 
 .container button {
